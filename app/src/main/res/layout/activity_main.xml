@@ -9,6 +9,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="40dp">
         <ImageView
+            android:src="@drawable/shouye_icon"
             android:layout_marginLeft="18dp"
             android:layout_width="30dp"
             android:layout_height="30dp" />
@@ -24,13 +25,15 @@
     <LinearLayout
         android:id="@+id/llt_to_sao"
         android:orientation="vertical"
-
         android:gravity="center"
+        android:background="@drawable/bg_shouye_sao"
         android:layout_centerInParent="true"
         android:layout_width="100dp"
         android:layout_height="100dp">
-        <ImageView android:layout_width="28dp"
-                   android:layout_height="28dp" />
+        <ImageView
+            android:src="@drawable/shouye_saoyisao"
+            android:layout_width="28dp"
+            android:layout_height="28dp" />
         <!--android:src="@drawable/shouye_saoyisao"-->
         <TextView
             android:text="扫一扫"
@@ -64,9 +67,9 @@
         android:layout_width="60dp"
         android:layout_height="60dp">
         <ImageView
+            android:src="@drawable/shouye_shezhi"
             android:layout_centerInParent="true"
             android:layout_width="25dp"
             android:layout_height="25dp" />
-        <!--android:src="@drawable/shouye_shezhi"-->
     </LinearLayout>
 </RelativeLayout>
