@@ -1,4 +1,4 @@
-package edu.yzk.qrcodestatistics.encode;
+package edu.yzk.qrcodestatistics.issueStatistics;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;

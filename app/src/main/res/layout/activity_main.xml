@@ -9,41 +9,94 @@
                   android:layout_width="match_parent"
                   android:layout_height="40dp">
         <ImageView
-            android:src="@drawable/shouye_icon"
+            android:src="@drawable/icon"
             android:layout_marginLeft="18dp"
             android:layout_width="30dp"
             android:layout_height="30dp" />
 
-        <!--android:src="@drawable/shouye_icon"-->
-        <TextView android:text="笨土豆分销"
+        <TextView android:text="扫码统计系统"
                   android:layout_marginLeft="8dp"
                   android:textSize="16sp"
                   android:textColor="@color/white"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/llt_to_sao"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/bg_shouye_sao"
-        android:layout_centerInParent="true"
         android:layout_width="100dp"
-        android:layout_height="100dp">
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="109dp"
+        android:background="@drawable/bg_shouye_sao"
+        android:gravity="center"
+        android:orientation="vertical">
+
         <ImageView
-            android:src="@drawable/shouye_saoyisao"
             android:layout_width="28dp"
-            android:layout_height="28dp" />
-        <!--android:src="@drawable/shouye_saoyisao"-->
+            android:layout_height="28dp"
+            android:src="@drawable/shouye_saoyisao"/>
         <TextView
-            android:text="扫一扫"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/white"
-            android:textSize="15sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="扫一扫"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
     </LinearLayout>
-    <!--android:background="@drawable/bg_shouye_sao"-->
+
+    <LinearLayout
+        android:id="@+id/issue_statistics"
+        android:layout_width="100dp"
+        android:layout_height="97dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/bg_shouye_sao"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/shouye_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="发统计"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/my_statistics"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="133dp"
+        android:background="@drawable/bg_shouye_sao"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/whiteeye"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="查看统计"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llt_to_phone"

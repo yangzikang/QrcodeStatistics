@@ -4,60 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+
+    android:background="@drawable/background_login"
+
+    android:padding="16dp"
+    android:orientation="vertical"
     tools:context="edu.yzk.qrcodestatistics.issueStatistics.IssueActivity">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="0.5">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="发布者"/>
+            android:layout_weight="0.5"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="发布者："
+                android:textColor="@color/white"
+                android:textSize="36sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="类    型："
+                android:textColor="@color/white"
+                android:textSize="36sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="问    题："
+                android:textColor="@color/white"
+                android:textSize="36sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="类型"/>
+            android:layout_weight="0.5"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="问题"/>
+            <TextView
+                android:id="@+id/issue_name"
+                android:layout_width="212dp"
+                android:layout_height="wrap_content"
+                android:text="发布者"
+                android:textColor="@color/white"
+                android:textSize="36sp"/>
 
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"/>
 
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="0dp"
+    <EditText
+        android:id="@+id/edit_question"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:ems="10"
+        android:hint="请输入问题"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="36sp"/>
 
-        <TextView
-            android:id="@+id/issue_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="发布者"/>
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            />
-
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_shouye_sao"
+        android:text="提交"/>
 </LinearLayout>
 

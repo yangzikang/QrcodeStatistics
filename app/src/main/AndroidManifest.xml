@@ -8,7 +8,7 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -23,11 +23,17 @@
         <activity android:name=".qrcode.GeneralCaptureActivity"/>
         <activity android:name=".issueStatistics.IssueActivity">
         </activity>
-        <activity android:name=".main.MainActivity">
+        <activity
+            android:name=".main.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar">
         </activity>
         <activity android:name=".form.FormActivity">
         </activity>
         <activity android:name=".Login.LoginActivity">
+        </activity>
+        <activity android:name=".issueStatistics.EncodeActivity">
+        </activity>
+        <activity android:name=".inspect.InspectActivity">
         </activity>
     </application>
 
