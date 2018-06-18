@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android = "http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <!--dashGap 虚线间隔  dashWidth 虚线宽度 一个不设置则为实线-->
+            <stroke
+                android:width="1dp"
+                android:color="#00f"/>u7
+            <corners android:radius="6dp"/>
+        </shape>
+    </item>
+
+    <!--
+    <item  android:botton="2dp"
+        android:right="2dp"
+        android:top="2dp"
+        android:left="2dp">
+        <shape>
+            angle 渐变角度45度的整数倍
+                type 渐变类型 sweep/linear
+
+            <gradient android:startColor="#ddddFF"
+                android:centerColor="#aa00FF"
+                android:endColor="@android:color/transparent"
+                android:type="sweep"
+                android:angle="45"
+                android:centerX="0.5"
+                android:centerY="0.5"/>
+            <padding android:botton="2dp"
+                android:right="2dp"
+                android:top="2dp"
+                android:left="2dp"/>
+            <corners android:radius="6dp"/>
+        </shape>
+    </item>-->
+</layer-list>

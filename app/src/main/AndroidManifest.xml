@@ -35,6 +35,10 @@
         </activity>
         <activity android:name=".inspect.InspectActivity">
         </activity>
+        <activity android:name=".Login.SignUpActivity">
+        </activity>
+        <activity android:name=".myStatistics.MyStatisticsActivity">
+        </activity>
     </application>
 
 </manifest>

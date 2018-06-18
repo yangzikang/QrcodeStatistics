@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/activity_sclogin"
+                android:id="@+id/activity_scsign_up"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
-                tools:context="edu.yzk.qrcodestatistics.Login.LoginActivity">
+                tools:context="edu.yzk.qrcodestatistics.Login.SignUpActivity">
 
 
     <LinearLayout
@@ -42,9 +40,31 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:id="@+id/loginAccount"
+                    android:id="@+id/signUpAccount"
                     android:layout_weight="0.8"
                     android:hint="请输入账号" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1">
+
+                <TextView android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="0.2"
+                          android:text="姓名:"
+                          android:textSize="18sp"
+                          android:textStyle="bold"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:id="@+id/realname"
+                    android:layout_weight="0.8"
+                    android:hint="请输入姓名" />
 
             </TableRow>
 
@@ -66,7 +86,29 @@
                     android:layout_weight="0.8"
                     android:hint="请输入密码"
                     android:inputType="textPassword"
-                    android:id="@+id/loginPassword" />
+                    android:id="@+id/signUpPassword" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2">
+
+                <TextView android:layout_width="0dp"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="0.2"
+                          android:text="确认:"
+                          android:textSize="18sp"
+                          android:textStyle="bold"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:hint="请确认密码"
+                    android:inputType="textPassword"
+                    android:id="@+id/certainPassword" />
 
             </TableRow>
 
@@ -82,11 +124,11 @@
             >
 
             <Button
-                android:text="登 陆"
+                android:text="注 册"
                 android:textSize="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/login"
+                android:id="@+id/signUp"
                 android:textColor="@android:color/background_light"
                 android:background="@drawable/button_style_login_gray"
                 android:layout_alignParentTop="true"
@@ -94,20 +136,5 @@
                 android:enabled="false"/>
         </RelativeLayout>
 
-        <RelativeLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/toSignUp"
-                android:text="注册一个"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:background="@android:color/transparent"
-                android:textColor="@color/colorPrimaryDark" />
-        </RelativeLayout>
-
     </LinearLayout>
-
 </RelativeLayout>

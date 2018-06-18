@@ -23,25 +23,28 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="发布者："
+                android:text="名    称："
                 android:textColor="@color/white"
-                android:textSize="36sp"/>
+                android:textSize="20sp"/>
 
             <TextView
+                android:layout_marginTop="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="类    型："
                 android:textColor="@color/white"
-                android:textSize="36sp"/>
+                android:textSize="20sp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="问    题："
+                android:layout_marginTop="8dp"
                 android:textColor="@color/white"
-                android:textSize="36sp"/>
+                android:textSize="20sp"/>
 
 
         </LinearLayout>
@@ -52,13 +55,15 @@
             android:layout_weight="0.5"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/issue_name"
-                android:layout_width="212dp"
+            <EditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="发布者"
+                android:hint="请输入名称"
+                android:background="@drawable/bg_shouye_sao"
                 android:textColor="@color/white"
-                android:textSize="36sp"/>
+                android:textSize="20sp"/>
 
             <Spinner
                 android:id="@+id/spinner"
@@ -69,20 +74,27 @@
     </LinearLayout>
 
     <EditText
+        android:layout_marginTop="10dp"
         android:id="@+id/edit_question"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="168dp"
         android:layout_weight="0.5"
-        android:ems="10"
+        android:gravity="top"
         android:hint="请输入问题"
-        android:textAlignment="center"
+        android:inputType="textMultiLine"
+        android:minLines="8"
+        android:background="@drawable/bg_shouye_sao"
         android:textColor="@color/white"
-        android:textSize="36sp"/>
+        android:textSize="20sp"/>
 
     <Button
+        android:layout_marginTop="16dp"
         android:id="@+id/commit"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
         android:background="@drawable/bg_shouye_sao"
         android:text="提交"/>
 </LinearLayout>

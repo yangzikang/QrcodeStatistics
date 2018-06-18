@@ -11,8 +11,8 @@
         <ImageView
             android:src="@drawable/icon"
             android:layout_marginLeft="18dp"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
 
         <TextView android:text="扫码统计系统"
                   android:layout_marginLeft="8dp"

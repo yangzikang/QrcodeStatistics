@@ -10,6 +10,7 @@ import android.widget.TextView;
 import edu.yzk.qrcodestatistics.Login.LoginActivity;
 import edu.yzk.qrcodestatistics.R;
 import edu.yzk.qrcodestatistics.issueStatistics.IssueActivity;
+import edu.yzk.qrcodestatistics.myStatistics.MyStatisticsActivity;
 import edu.yzk.qrcodestatistics.qrcode.GeneralCaptureActivity;
 
 public class MainActivity extends Activity {
@@ -40,6 +41,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        LinearLayout my = findViewById(R.id.my_statistics);
+        my.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MyStatisticsActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
