@@ -4,13 +4,21 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.AdapterView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
 
 import edu.yzk.qrcodestatistics.Login.LoginActivity;
 import edu.yzk.qrcodestatistics.R;
+import edu.yzk.qrcodestatistics.main.MainActivity;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -57,7 +65,29 @@ public class MyStatisticsActivity extends AppCompatActivity {
 
     private void setResponseString(String s) {
         responseString = s;
-        //todo: 生成list 填充到RecyclerView
+        List<UserStatisticsModel> list = stringToList(responseString);
+        RecyclerView mRecyclerView =   findViewById(R.id.recyclerView);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        MyRecyclerViewAdapter mAdapter = new MyRecyclerViewAdapter(list);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.setAdapter(mAdapter);
+
+    }
+
+    private List<UserStatisticsModel> stringToList(String string) {
+
+        Log.e("yang",string);
+        String[] args = string.split(" ");
+        for(int i= 0;i <args.length;i++){
+            Log.e("yang",args[i]);
+        }
+        List<UserStatisticsModel> list = new ArrayList<>();
+        for (int i = 0; i < args.length; i+=2) {
+            UserStatisticsModel model = new UserStatisticsModel();
+            model.setStatisticsId(args[i]);
+            model.setStatisticsName(args[i+1]);
+        }
+        return list;
     }
 
     static class MyHandler extends Handler {

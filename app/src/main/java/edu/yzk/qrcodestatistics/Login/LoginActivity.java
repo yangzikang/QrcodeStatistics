@@ -100,14 +100,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
+                    String urlString = "http://139.199.117.141/login.php?userid="+userid+"&password="+password;
+                    Log.w("kwwl",urlString);
                     OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象
                     Request request = new Request.Builder()
-                            .url("http://139.199.117.141/login.php?userid="+userid+"&password="+password)//请求接口。如果需要传参拼接到接口后面。
+                            .url(urlString)//请求接口。如果需要传参拼接到接口后面。
                             .build();//创建Request 对象
                     Response response  = client.newCall(request).execute();//得到Response 对象
                     if (response.isSuccessful()) {
-                        Log.d("kwwl","response.code()=="+response.code());
-                        Log.d("kwwl","response.message()=="+response.message());
+                        Log.w("kwwl","response.code()=="+response.code());
+                        Log.w("kwwl","response.message()=="+response.message());
                         //此时的代码执行在子线程，修改UI的操作请使用handler跳转到UI线程。
                         Message message = new Message();
                         Bundle b = new Bundle();
