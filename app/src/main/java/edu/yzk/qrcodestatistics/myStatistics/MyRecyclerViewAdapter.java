@@ -17,6 +17,7 @@ import edu.yzk.qrcodestatistics.R;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
     private List<UserStatisticsModel> list;
+    private OnItemClickListener mOnItemClickListener;
 
     public MyRecyclerViewAdapter(List<UserStatisticsModel> list) {
         this.list = list;
@@ -33,11 +34,28 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     public void onBindViewHolder(MyRecyclerViewAdapter.ViewHolder holder, int position) {
         holder.statisticsId.setText(list.get(position).getStatisticsId());
         holder.statisticsName.setText(list.get(position).getStatisticsName());
+        final int position2 = position;
+
+        if( mOnItemClickListener!= null){
+            holder.itemView.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mOnItemClickListener.onClick(position2);
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    public interface OnItemClickListener{
+        void onClick( int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener ){
+        this.mOnItemClickListener=onItemClickListener;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

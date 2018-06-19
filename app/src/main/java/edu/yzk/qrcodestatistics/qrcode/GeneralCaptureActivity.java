@@ -92,6 +92,8 @@ public class GeneralCaptureActivity extends Activity implements Callback {
     public void handleDecode(Result result, Bitmap barcode) {
         String resultString = result.getText();
         Toast.makeText(this,resultString,Toast.LENGTH_LONG).show();
+
+
     }
 
 

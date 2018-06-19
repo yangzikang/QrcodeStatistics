@@ -39,6 +39,8 @@
         </activity>
         <activity android:name=".myStatistics.MyStatisticsActivity">
         </activity>
+        <activity android:name=".myStatistics.ShowFormsActivity">
+        </activity>
     </application>
 
 </manifest>

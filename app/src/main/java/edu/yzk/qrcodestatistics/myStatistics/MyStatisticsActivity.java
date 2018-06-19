@@ -1,5 +1,6 @@
 package edu.yzk.qrcodestatistics.myStatistics;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.yzk.qrcodestatistics.Login.LoginActivity;
+import edu.yzk.qrcodestatistics.Login.SignUpActivity;
 import edu.yzk.qrcodestatistics.R;
 import edu.yzk.qrcodestatistics.main.MainActivity;
 import okhttp3.OkHttpClient;
@@ -65,28 +67,44 @@ public class MyStatisticsActivity extends AppCompatActivity {
 
     private void setResponseString(String s) {
         responseString = s;
-        List<UserStatisticsModel> list = stringToList(responseString);
-        RecyclerView mRecyclerView =   findViewById(R.id.recyclerView);
+        final List<UserStatisticsModel> list = stringToList(responseString);
+        RecyclerView mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         MyRecyclerViewAdapter mAdapter = new MyRecyclerViewAdapter(list);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(mAdapter);
 
+        mAdapter.setOnItemClickListener(new MyRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(int position) {
+                Toast.makeText(MyStatisticsActivity.this,"您点击了"+position+"行",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MyStatisticsActivity.this,ShowFormsActivity.class);
+                intent.putExtra("sid",list.get(position).getStatisticsId());
+                startActivity(intent);
+            }
+        });
+
     }
 
     private List<UserStatisticsModel> stringToList(String string) {
 
-        Log.e("yang",string);
-        String[] args = string.split(" ");
-        for(int i= 0;i <args.length;i++){
-            Log.e("yang",args[i]);
+        Log.e("yang", string);
+        String[] args = string.split("&");
+        for (int i = 0; i < args.length; i++) {
+            Log.e("yang", args[i]);
         }
         List<UserStatisticsModel> list = new ArrayList<>();
-        for (int i = 0; i < args.length; i+=2) {
+        for (int i = 0; i < args.length; i += 2) {
             UserStatisticsModel model = new UserStatisticsModel();
             model.setStatisticsId(args[i]);
-            model.setStatisticsName(args[i+1]);
+            if (i + 1 < args.length) {
+                model.setStatisticsName(args[i + 1]);
+            }
+            list.add(model);
         }
+
+        Log.e("list",String.valueOf(list.size()));
+
         return list;
     }
 
