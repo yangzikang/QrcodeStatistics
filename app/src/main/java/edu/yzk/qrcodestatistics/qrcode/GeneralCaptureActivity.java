@@ -2,6 +2,7 @@ package edu.yzk.qrcodestatistics.qrcode;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 
 import edu.yzk.qrcodestatistics.R;
+import edu.yzk.qrcodestatistics.form.FormActivity;
 
 import java.io.IOException;
 import java.util.Vector;
@@ -91,9 +93,10 @@ public class GeneralCaptureActivity extends Activity implements Callback {
      */
     public void handleDecode(Result result, Bitmap barcode) {
         String resultString = result.getText();
-        Toast.makeText(this,resultString,Toast.LENGTH_LONG).show();
-
-
+        Intent intent = new Intent(this, FormActivity.class);
+        intent.putExtra("result", resultString);
+        startActivity(intent);
+        //Toast.makeText(this,resultString,Toast.LENGTH_LONG).show();
     }
 
 
